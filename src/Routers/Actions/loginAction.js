@@ -10,16 +10,14 @@ const loginAction = async ({ request }) => {
             formData.get("password")
         );
         
-        
+        // If the session is created successfully, redirect the user to the home page
+        return redirect('/');
     } catch (error) {
-        console.log(`error creating email session: ${error.message}`);
+        // If an error occurs during session creation, return an object with the error message
         return {
             message: error.message,
         };
     }
-    
-    // on successful login, redirect the user to the home page
-    return redirect("/");
 };
 
 export default loginAction;

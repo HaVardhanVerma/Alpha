@@ -24,14 +24,12 @@ const conversationAction = async ({request, params}) => {
         });
     }
     catch (ERROR) {
-        console.log(`Error fetching chat history: ${ERROR.message}`);
     }
 
     try {
         aiResponse = await getAiResponse(userPrompt, chatHistory);
     }
     catch (ERROR) {
-        console.log(`Error fetching AI response: ${ERROR.message}`);
     }
     
     try {
@@ -47,7 +45,6 @@ const conversationAction = async ({request, params}) => {
         );
     }
     catch (ERROR) {
-        console.log(`Error saving chat history: ${ERROR.message}`);
     }
 
     return null;

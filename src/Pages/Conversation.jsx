@@ -14,15 +14,18 @@ const Conversation = () => {
 
   const {promptPreoaderValue} = usePromptPreloader();
 
-  const {conversation: {title, chats},} = useLoaderData() || {};
+  const { user, conversation } = useLoaderData() ?? {};
+
+  const {
+    chats,
+    $id: conversationId,
+  } = conversation;
 
   const location = useLocation();
 
-  console.log(chats);
-
   return (
     <>
-      <PageTitle title={`${title} - Fusion`}/>
+      <PageTitle title={`${conversation.title} - Fusion`}/>
 
       <motion.div className='max-w-[700px] mx-auto !will-change-auto' initial={!location.state?.isRedirect && {opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.2, delay: 0.05, ease: 'easeOut'}}>
         {

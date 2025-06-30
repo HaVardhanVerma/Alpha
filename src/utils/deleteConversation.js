@@ -13,10 +13,11 @@ const deleteConversation = ({id, title, submit}) => {
             method: 'DELETE',
             encType: 'application/x-www-form-unlencoded',
             action: '/',
+        },
+        {
+            replace: true,
         }
-)
-
-    console.log('Conversation delete');
+    );
 }
 
 export default deleteConversation;

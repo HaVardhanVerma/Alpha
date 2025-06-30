@@ -20,7 +20,7 @@ const getConversationTitle = async (userPrompt) => {
         return result.response.text();
     }
     catch (ERROR) {
-        console.log(`Error generating the conversation title: ${ERROR.message}`);
+        // Log any errors that occur during title generation
     }
 };
 
@@ -54,7 +54,7 @@ const getAiResponse = async(userPrompt, chats = []) => {
         return result.response.text();
     } 
     catch (ERROR) {
-        console.log(`Error generating AI response: ${ERROR.message}`)
+        // Log any errors that occur during AI response generation
     }
 }
 

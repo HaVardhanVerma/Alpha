@@ -30,9 +30,11 @@ const registerAction = async ({request}) => {
             formData.get('password'),
         )
     }
-    catch(ERROR) {
-        console.log(`error creating email session: ${ERROR.message}`);
-        return redirect('/login');
+    catch (ERROR) {
+        // If an error occurs during session creation, return the error
+        return {
+            message: ERROR.message,
+        }
     }
     
     // Redirect the user to the home page

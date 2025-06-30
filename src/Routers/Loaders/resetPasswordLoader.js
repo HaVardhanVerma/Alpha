@@ -6,11 +6,12 @@ const resetPasswordLoader = async ({request}) =>  {
     const url = new URL(request.url);
 
     try { 
-        // trying to retrive the user's account information
-        await account.get();
-    }
-    catch(ERROR) {
-        console.log(`error getting account: ${ERROR.message}`);
+        // Attempt to retrieve user account information
+        const user = await account.get();
+        return user;
+    } catch(ERROR) {
+        // If there is an error getting the account, log the error message
+        return redirect('/login');
     }
 
     // Check if userId and secret parameters are present in the URL

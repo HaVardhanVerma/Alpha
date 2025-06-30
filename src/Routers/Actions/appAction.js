@@ -29,7 +29,6 @@ const userPromptAction = async(request) => {
         );
     }
     catch(ERROR) {
-        console.log(`Error creating conversation: ${ERROR.message}`)
     }
 
     // Generate an AI response based on the user's prompt
@@ -49,7 +48,6 @@ const userPromptAction = async(request) => {
         );
     }
     catch (ERROR) {
-        console.log(`Error generating AI response: ${ERROR.message}`);
     }
 
     return redirect(`/${conversation.$id}`);
@@ -68,7 +66,6 @@ const conversationAction = async (formData) => {
 
         return {conversationTitle};
     } catch(ERROR) {
-        console.log(`Error getting deletion ${ERROR.message}`);
     }
 }
 

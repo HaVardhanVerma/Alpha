@@ -13,8 +13,6 @@ const appLoader = async () => {
     } catch(ERROR) {
         // Redirect to login page if account retrival fails
 
-        console.log(`Error getting user session ${ERROR.message}`);
-
         return redirect('/login');
     }
 
@@ -33,7 +31,6 @@ const appLoader = async () => {
         }
     }
     catch(ERROR) {
-        console.log(`Error getting user session ${ERROR.message}`);
     }
 
     return data;

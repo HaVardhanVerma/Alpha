@@ -3,17 +3,14 @@ import { account } from "../../lib/appwriter";
 
 const resetLinkLoader = async () =>  {
 
-    try { 
+    try {
         // trying to retrive the user's account information
-        await account.get();
+        const user = await account.get();
+        return redirect('/');
     }
     catch(ERROR) {
-        console.log(`error getting account: ${ERROR.message}`);
         return null;
     }
-
-    // if the user's data is successfully retrive. Redirect the user to the home page
-    return redirect('/');
 };
 
 export default resetLinkLoader;

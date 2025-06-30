@@ -97,8 +97,8 @@ const AiResponse = ({aiResponse, children}) => {
         try {
             await navigator.clipboard.writeText(text);
             
+            showSnackbar({message: 'Text copied to clipboard'});
         } catch (ERROR) {
-            showSnackbar({message: ERROR.message});
             console.log(`Error copying to clipboard: ${ERROR.message}`);
         }
     }, [showSnackbar]);

@@ -5,6 +5,7 @@ import { IconBtn } from "./Button";
 import { useRef, useCallback, useState} from "react";
 
 import { useSubmit, useNavigation, useParams } from "react-router-dom";
+import usePromptPreloader from "../Hooks/usePromptPreloader";
 
 
 function PromptField() {
@@ -13,12 +14,13 @@ function PromptField() {
   const [isMultiline, setIsMultiline] = useState(false);
   const [inputValue, setInputValue] = useState(''); 
 
-  const {conversationId} = useParams();
-  console.log(conversationId);
+  const { conversationId } = useParams();
 
   const submit = useSubmit();
 
   const navigation = useNavigation();
+
+  const { setPromptPreloaderValue } = usePromptPreloader();
 
   const inputFieldContainer = useRef();
 

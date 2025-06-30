@@ -6,10 +6,10 @@ const logout = async (navigate) => {
         await account.deleteSession('current');
 
     } catch (ERROR) {
-        return console.log(`Error deleting user session: ${ERROR.message}`);
+        // If an error occurs during session deletion, log the error message.
     }
 
-    return navigate('/login')
+    return navigate('/login');
 };
 
 export default logout;
