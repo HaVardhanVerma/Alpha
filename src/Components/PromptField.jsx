@@ -5,7 +5,7 @@ import { IconBtn } from "./Button";
 import { useRef, useCallback, useState} from "react";
 
 import { useSubmit, useNavigation, useParams } from "react-router-dom";
-import usePromptPreloader from "../Hooks/usePromptPreloader";
+import {usePromptPreloader} from "../Hooks/usePromptPreloader";
 
 
 function PromptField() {
@@ -20,7 +20,7 @@ function PromptField() {
 
   const navigation = useNavigation();
 
-  const { setPromptPreloaderValue } = usePromptPreloader();
+  const { promptPreoaderValue } = usePromptPreloader();
 
   const inputFieldContainer = useRef();
 
