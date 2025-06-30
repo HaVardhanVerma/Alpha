@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useLoaderData } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { usePromptPreloader } from "../Hooks/usePromptPreloader";
+import usePromptPreloader from "../Hooks/usePromptPreloader";
 import PromptPreloader from "../Components/PromptPreloader";
 
 import React from 'react'
