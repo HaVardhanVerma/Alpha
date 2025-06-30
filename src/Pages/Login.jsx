@@ -60,7 +60,7 @@ function Login() {
 
               <div className='flex justify-between items-center'>
                 <div></div>
-                <Link to='/reset-password' className='link text-labelLarge text-primary hover:underline focus:underline transition-colors'>
+                <Link to='/reset-link' className='link text-labelLarge text-primary hover:underline focus:underline transition-colors'>
                     Forgot Password?
                 </Link>
               </div>
