@@ -2,7 +2,7 @@ import './App.css'
 
 import PageTitle from './Components/PageTitle';
 import TopAppbar from './Components/TopAppbar';
-import Sidebar from './Components/SideBar';
+import Sidebar from './Components/Sidebar';
 import Greetings from './Pages/Greetings';
 import PromptField from './Components/PromptField';
 
