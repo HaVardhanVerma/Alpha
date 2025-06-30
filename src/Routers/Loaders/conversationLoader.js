@@ -18,7 +18,7 @@ const conversationLoader = async ({params}) => {
 
     try {
         // Attempt to get the conversation document from the Apprite database
-        data.conversation = await databases.getDocument(import.meta.env.VITE_APPWRITE_DATABASE_ID, 'conversations', conversationId);
+        data.conversation = await databases.getDocument('fusion_db', 'conversations', conversationId);
 
     } catch (ERROR) {
         console.log(`Error geeting conversation: ${ERROR.message}`);

@@ -14,7 +14,7 @@ const conversationAction = async ({request, params}) => {
 
     try {
         const {chats} = await databases.getDocument(
-            import.meta.env.VITE_APPWRITE_DATABASE_ID,
+            'fusion_db',
             'conversations',
             conversationId,
         );
@@ -36,7 +36,7 @@ const conversationAction = async ({request, params}) => {
     
     try {
         await databases.createDocument(
-            import.meta.env.VITE_APPWRITE_DATABASE_ID,
+            'fusion_db',
             'chats',
             IdGenerator(),
             {

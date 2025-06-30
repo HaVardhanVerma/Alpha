@@ -21,7 +21,7 @@ const appLoader = async () => {
     try {
 
         data.conversations = await databases.listDocuments(
-            import.meta.env.VITE_APPWRITE_DATABASE_ID,
+            'fusion_db',
             'conversations',
             [
                 Query.select(['$id', 'title']),
