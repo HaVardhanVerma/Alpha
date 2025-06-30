@@ -19,8 +19,10 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
 
     // Extract conversation data from the loader if exists
     const {
-        conversations: {documents: conversationData},
+        conversations
     } = useLoaderData() || {};
+
+    const conversationData = conversations?.documents;
 
     return (
         <>
@@ -48,7 +50,7 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
                         </p>
 
                         <nav>
-                            {conversationData.map((item) => (
+                            {conversationData && Array.isArray(conversationData) && conversationData.map((item) => (
                                 <div key={item.$id} className='relative group'>
                                 <NavLink to={item.$id} className='nav-link' title={item.title} onClick={toggleSidebar}>
                                     <span className="material-symbols-rounded icon-small">chat_bubble</span>
