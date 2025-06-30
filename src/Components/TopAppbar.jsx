@@ -92,7 +92,7 @@ function TopAppbar({toggleSidebar}) {
   )
 };
 
-TopAppbar.PropTypes = {
+TopAppbar.propTypes = {
   toggleSidebar: PropTypes.func,
 }
 
