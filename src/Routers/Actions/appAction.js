@@ -19,7 +19,7 @@ const userPromptAction = async(request) => {
     try {
         // Create a new conversation document in the Appwrite database
         conversation = await databases.createDocument(
-            'fusion_db',
+            import.meta.env.VITE_APPWRITE_DATABASE_ID,
             'conversations',
             IdGenerator(),
             {
@@ -37,7 +37,7 @@ const userPromptAction = async(request) => {
     try {
         // Create a new message document in the Appwrite database 'chats' collection
         await databases.createDocument(
-            'fusion_db',
+            import.meta.env.VITE_APPWRITE_DATABASE_ID,
             'chats',
             IdGenerator(),
             {
@@ -59,7 +59,7 @@ const conversationAction = async (formData) => {
 
     try {
         await databases.deleteDocument(
-            'fusion_db',
+            import.meta.env.VITE_APPWRITE_DATABASE_ID,
             'conversations',
             conversationId,
         );

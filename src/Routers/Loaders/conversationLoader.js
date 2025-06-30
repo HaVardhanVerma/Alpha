@@ -17,7 +17,7 @@ const conversationLoader = async ({params}) => {
 
     try {
         // Attempt to get the conversation document from the Apprite database
-        data.conversation = await databases.getDocument('fusion_db', 'conversations', conversationId);
+        data.conversation = await databases.getDocument(import.meta.env.VITE_APPWRITE_DATABASE_ID, 'conversations', conversationId);
 
     } catch (ERROR) {
         throw ERROR; // Re-throw the error so it can be handled by the error Bondary or a suitable component.
