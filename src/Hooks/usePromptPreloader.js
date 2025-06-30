@@ -24,4 +24,4 @@ const usePromptPreloader = () => {
     return {promptPreoaderValue};
 }
 
-export {usePromptPreloader};
+export default usePromptPreloader;
