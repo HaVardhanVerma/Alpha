@@ -20,15 +20,17 @@ const appLoader = async () => {
 
     try {
 
-        data.conversations = await databases.listDocuments(
-            'fusion_db',
-            'conversations',
-            [
-                Query.select(['$id', 'title']),
-                Query.orderDesc('$createdAt'),
-                Query.equal('user_id', data.user.$id),
-            ],
-        );
+        if(data.user) {
+            data.conversations = await databases.listDocuments(
+                'fusion_db',
+                'conversations',
+                [
+                    Query.select(['$id', 'title']),
+                    Query.orderDesc('$createdAt'),
+                    Query.equal('user_id', data.user.$id),
+                ],
+            );
+        }
     }
     catch(ERROR) {
         console.log(`Error getting user session ${ERROR.message}`);
