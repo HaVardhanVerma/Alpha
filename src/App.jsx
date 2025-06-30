@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react';
 import { Outlet, useParams, useNavigation, useActionData } from 'react-router-dom';
 
 import { useSnackBar } from './Hooks/useSnackBar';
-import { usePromptPreloader } from './Hooks/usePromptPreloader';
+import usePromptPreloader from './Hooks/usePromptPreloader';
 
 function App() {
 
