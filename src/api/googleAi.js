@@ -59,5 +59,3 @@ const getAiResponse = async(userPrompt, chats = []) => {
 }
 
 export { getConversationTitle, getAiResponse };
-
-// hello
